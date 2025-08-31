@@ -1,5 +1,21 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/raandomdev/r4ndom-hub/refs/heads/uis/source.lua')))() 
-local Window = OrionLib:MakeWindow({Name = "Qwerty hub", HidePremium = false, SaveConfig = false, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({
+    Name = "Qwerty hub",
+    HidePremium = false, 
+    SaveConfig = false, 
+    ConfigFolder = "OrionTest",
+    IntroEnabled = true,
+    IntroIcon = "rbxassetid://4483345998",
+    Icon = "rbxassetid://4483345998",
+    CloseCallback = function()
+        print("Window closed")
+    end,
+    IntroText = "R4ndom-hub",
+    Sizing = {
+        Width = 500,
+        Height = 500
+    }
+})
 --[[
 Name = <string> - The name of the UI.
 HidePremium = <bool> - Whether or not the user details shows Premium status or not.
