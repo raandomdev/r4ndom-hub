@@ -146,6 +146,12 @@ Tab:AddDropdown({
 	end    
 })
 
+local LocalPlayer = Window:MakeTab({
+    Name = "LocalPlayer",
+    Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
 --[[
 Name = <string> - The name of the dropdown.
 Default = <string> - The default value of the dropdown.
