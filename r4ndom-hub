@@ -26,8 +26,8 @@ local Window = Rayfield:CreateWindow({
    }
 })
 
-local Tab = Window:CreateTab("Tab Example", 4483362458)
-
+local Tab = Window:CreateTab("Home", 4483362458)
+local Main = Window:CreateTab("Main", 279461711)
 local Section = Tab:CreateSection("Section Example")
 
 Rayfield:Notify({
