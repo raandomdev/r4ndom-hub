@@ -1,6 +1,6 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/raandomdev/r4ndom-hub/refs/heads/uis/source.lua')))() 
 local Window = OrionLib:MakeWindow({
-    Name = "Qwerty hub",
+    Name = "R4ndom hub",
     HidePremium = false, 
     SaveConfig = false, 
     ConfigFolder = "OrionTest",
@@ -146,10 +146,23 @@ Tab:AddDropdown({
 	end    
 })
 
-local LocalPlayer = Window:MakeTab({
+local LocalPlayerTab = Window:MakeTab({
     Name = "LocalPlayer",
     Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
+})
+
+LocalPlayerTab:AddSlider({
+	Name = "Set Walkspeed",
+	Min = 0,
+	Max = 100,
+	Default = 16,
+	Color = Color.fromRGB(255, 255, 255),
+	Increment = 1,
+	ValueName = "walkspeed",
+	Callback = function(Value)
+		print(Value)
+	end
 })
 
 --[[
