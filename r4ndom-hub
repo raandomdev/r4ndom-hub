@@ -1,5 +1,5 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
-
+-- Window
 local Window = Rayfield:CreateWindow({
    Name = "R4ndom Hub",
    LoadingTitle = "R4ndom Hub",
@@ -27,7 +27,8 @@ local Window = Rayfield:CreateWindow({
 })
 
 local Tab = Window:CreateTab("Home", 4483362458)
-local Main = Window:CreateTab("Main", 279461711)
+local Main = Window:CreateTab("Main", 4483362458)
+local Automation = Window:CreateTab("Automation", 4483362458)
 local Section = Tab:CreateSection("Section Example")
 
 Rayfield:Notify({
