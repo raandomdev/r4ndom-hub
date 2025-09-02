@@ -1,5 +1,5 @@
 --// Require Nebula
-local NebulaUI = require(game.ReplicatedStorage.NebulaUI)
+local NebulaUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/raandomdev/r4ndom-hub/refs/heads/uis/source.lua"))()
 
 --// Window
 local Window = NebulaUI:CreateWindow({
