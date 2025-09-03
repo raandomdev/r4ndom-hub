@@ -88,8 +88,8 @@ local Themes = {
 		Success = Color3.fromRGB(80, 220, 160),
 		Danger = Color3.fromRGB(255, 95, 95),
 		Stroke = Color3.fromRGB(255, 255, 255),
-		Transparency = 0.15,
-		StrokeTransparency = 0.85,
+		Transparency = 0.5,
+		StrokeTransparency = 0.5,
 	}
 }
 
