@@ -1,111 +1,94 @@
---// Require Nebula
-local NebulaUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/raandomdev/r4ndom-hub/refs/heads/uis/source.lua"))()
-
---// Window
-local Window = NebulaUI:CreateWindow({
-    Name = "R4ndom Hub",
-    LoadingTitle = "R4ndom Hub",
-    LoadingSubtitle = "by Sirius",
-    ConfigurationSaving = {
-        Enabled = true,
-        FolderName = nil,
-        FileName = "R4ndomfile"
-    },
-    Discord = {
-        Enabled = false,
-        Invite = "[REDACTED]",
-        RememberJoins = true
-    },
-    KeySystem = false,
-    KeySettings = {
-        Title = "R4ndom Hub",
-        Subtitle = "Key System",
-        Note = "Join the discord (discord.gg/[TBD])",
-        FileName = "SiriusKey",
-        SaveKey = true,
-        GrabKeyFromSite = false,
-        Key = "Hello"
-    }
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+-- Window
+local Window = Rayfield:CreateWindow({
+   Name = "R4ndom Hub",
+   LoadingTitle = "R4ndom Hub",
+   LoadingSubtitle = "by Sirius",
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = nil,
+      FileName = "R4ndomfile"
+   },
+   Discord = {
+      Enabled = false,
+      Invite = "[REDACTED]",
+      RememberJoins = true
+   },
+   KeySystem = false,
+   KeySettings = {
+      Title = "R4ndom Hub",
+      Subtitle = "Key System",
+      Note = "Join the discord (discord.gg/[TBD])",
+      FileName = "SiriusKey",
+      SaveKey = true,
+      GrabKeyFromSite = false,
+      Key = "Hello"
+   }
 })
 
---// Tabs
 local Tab = Window:CreateTab("Home", 4483362458)
 local Main = Window:CreateTab("Main", 4483362458)
 local Automation = Window:CreateTab("Automation", 4483362458)
-
---// Section
 local Section = Tab:CreateSection("Section Example")
 
---// Notification
-NebulaUI:Notify({
-    Title = "Notification Title",
-    Content = "Notification Content",
-    Duration = 6.5,
-    Image = 4483362458,
-    Actions = {
-        Ignore = {
-            Name = "Okay!",
-            Callback = function()
-                print("The user tapped Okay!")
-            end
-        }
-    },
+Rayfield:Notify({
+   Title = "Notification Title",
+   Content = "Notification Content",
+   Duration = 6.5,
+   Image = 4483362458,
+   Actions = {
+      Ignore = {
+         Name = "Okay!",
+         Callback = function()
+         print("The user tapped Okay!")
+      end
+   },
+},
 })
 
---// Button
 local Button = Tab:CreateButton({
-    Name = "Button Example",
-    Callback = function()
-        print("Button clicked!")
-    end,
+   Name = "Button Example",
+   Callback = function()
+   end,
 })
 
---// Toggle
 local Toggle = Tab:CreateToggle({
-    Name = "Toggle Example",
-    CurrentValue = false,
-    Flag = "Toggle1",
-    Callback = function(Value)
-        print("Toggle set to:", Value)
-    end,
+   Name = "Toggle Example",
+   CurrentValue = false,
+   Flag = "Toggle1",
+   Callback = function(Value)
+   end,
 })
 
---// Slider
 local Slider = Tab:CreateSlider({
-    Name = "Slider Example",
-    Range = {0, 100},
-    Increment = 10,
-    Suffix = "Bananas",
-    CurrentValue = 10,
-    Flag = "Slider1",
-    Callback = function(Value)
-        print("Slider value:", Value)
-    end,
+   Name = "Slider Example",
+   Range = {0, 100},
+   Increment = 10,
+   Suffix = "Bananas",
+   CurrentValue = 10,
+   Flag = "Slider1",
+   Callback = function(Value)
+   
+   end,
 })
 
---// Input
 local Input = Tab:CreateInput({
-    Name = "Input Example",
-    PlaceholderText = "Input Placeholder",
-    RemoveTextAfterFocusLost = false,
-    Callback = function(Text)
-        print("Input:", Text)
-    end,
+   Name = "Input Example",
+   PlaceholderText = "Input Placeholder",
+   RemoveTextAfterFocusLost = false,
+   Callback = function(Text)
+   
+   end,
 })
 
---// Dropdown
+
 local Dropdown = Tab:CreateDropdown({
-    Name = "Dropdown Example",
-    Options = {"Option 1","Option 2"},
-    CurrentOption = "Option 1",
-    Flag = "Dropdown1",
-    Callback = function(Option)
-        print("Selected:", Option)
-    end,
+   Name = "Dropdown Example",
+   Options = {"Option 1","Option 2"},
+   CurrentOption = "Option 1",
+   Flag = "Dropdown1",
+   Callback = function(Option)
+   end,
 })
 
---// Paragraph
-local Paragraph = Tab:CreateParagraph({
-    Title = "Paragraph Example",
-    Content = "Paragraph Example"
-})
+local Paragraph = Tab:CreateParagraph({Title = "Paragraph Example", Content = "Paragraph Example"})
