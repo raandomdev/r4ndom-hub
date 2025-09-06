@@ -32,7 +32,7 @@ local Automation = Window:CreateTab("Automation", 4483362458)
 
 local SpeedSlider = Tab:CreateSlider({
    Name = "WalkSpeed",
-   Range = {16, 100}, -- Default is Roblox walk speed (16) up to 100
+   Range = {16, 100}, -- Default is Roblox walk speed (16) up to 100okokok
    Increment = 1,
    Suffix = "Speed",
    CurrentValue = 16,
