@@ -42,7 +42,7 @@ local SpeedSlider = Tab:CreateSlider({
    Text = "16",
    Callback = function(Value)
       local player = game.Players.LocalPlayer
-      local char = player:CharacterAdded:Wait()
+      local char = player.Character or player.CharacterAdded:Wait()
       local humanoid = char:WaitForChild("Humanoid")
       if humanoid then
          humanoid.WalkSpeed = Value
