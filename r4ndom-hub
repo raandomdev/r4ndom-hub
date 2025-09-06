@@ -29,23 +29,20 @@ local Window = Rayfield:CreateWindow({
 local Tab = Window:CreateTab("Home", 4483362458)
 local Main = Window:CreateTab("Main", 4483362458)
 local Automation = Window:CreateTab("Automation", 4483362458)
-local Section = Tab:CreateSection("Section Example")
 
 local SpeedSlider = Tab:CreateSlider({
-   Name = "Set WalkSpeed",
-   Range = {0, 16},
+   Name = "WalkSpeed",
+   Range = {16, 100}, -- Default is Roblox walk speed (16) up to 100
    Increment = 1,
    Suffix = "Speed",
    CurrentValue = 16,
-   Flag = "SetWalkSpeed",
-   Default = "16",
-   Text = "16",
+   Flag = "WalkSpeedSlider",
    Callback = function(Value)
-      local player = game.Players.LocalPlayer
-      local char = player.Character or player.CharacterAdded:Wait()
-      local humanoid = char:WaitForChild("Humanoid")
-      if humanoid then
-         humanoid.WalkSpeed = Value
-      end
+       local player = game.Players.LocalPlayer
+       local char = player.Character or player.CharacterAdded:Wait()
+       local humanoid = char:FindFirstChildOfClass("Humanoid")
+       if humanoid then
+           humanoid.WalkSpeed = Value
+       end
    end,
 })
