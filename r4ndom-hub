@@ -31,64 +31,21 @@ local Main = Window:CreateTab("Main", 4483362458)
 local Automation = Window:CreateTab("Automation", 4483362458)
 local Section = Tab:CreateSection("Section Example")
 
-Rayfield:Notify({
-   Title = "Notification Title",
-   Content = "Notification Content",
-   Duration = 6.5,
-   Image = 4483362458,
-   Actions = {
-      Ignore = {
-         Name = "Okay!",
-         Callback = function()
-         print("The user tapped Okay!")
+local SpeedSlider = Tab:CreateSlider({
+   Name = "Set WalkSpeed",
+   Range = {0, 16},
+   Increment = 1,
+   Suffix = "Speed",
+   CurrentValue = 16,
+   Flag = "SetWalkSpeed",
+   Default = "16",
+   Text = "16",
+   Callback = function(Value)
+      local player = game.Players.LocalPlayer
+      local char = player:CharacterAdded:Wait()
+      local humanoid = char:WaitForChild("Humanoid")
+      if humanoid then
+         humanoid.WalkSpeed = Value
       end
-   },
-},
-})
-
-local Button = Tab:CreateButton({
-   Name = "Button Example",
-   Callback = function()
    end,
 })
-
-local Toggle = Tab:CreateToggle({
-   Name = "Toggle Example",
-   CurrentValue = false,
-   Flag = "Toggle1",
-   Callback = function(Value)
-   end,
-})
-
-local Slider = Tab:CreateSlider({
-   Name = "Slider Example",
-   Range = {0, 100},
-   Increment = 10,
-   Suffix = "Bananas",
-   CurrentValue = 10,
-   Flag = "Slider1",
-   Callback = function(Value)
-   
-   end,
-})
-
-local Input = Tab:CreateInput({
-   Name = "Input Example",
-   PlaceholderText = "Input Placeholder",
-   RemoveTextAfterFocusLost = false,
-   Callback = function(Text)
-   
-   end,
-})
-
-
-local Dropdown = Tab:CreateDropdown({
-   Name = "Dropdown Example",
-   Options = {"Option 1","Option 2"},
-   CurrentOption = "Option 1",
-   Flag = "Dropdown1",
-   Callback = function(Option)
-   end,
-})
-
-local Paragraph = Tab:CreateParagraph({Title = "Paragraph Example", Content = "Paragraph Example"})
