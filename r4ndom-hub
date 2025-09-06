@@ -1,5 +1,5 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
--- Windowok
+-- Window
 local Window = Rayfield:CreateWindow({
    Name = "R4ndom Hub",
    LoadingTitle = "R4ndom Hub",
@@ -30,35 +30,19 @@ local Tab = Window:CreateTab("Home", 4483362458)
 local Main = Window:CreateTab("Main", 4483362458)
 local Automation = Window:CreateTab("Automation", 4483362458)
 
-local SpeedInput = Tab:CreateInput({
-   Name = "Set WalkSpeed",
-   PlaceholderText = "Enter a number (16-100)",
-   RemoveTextAfterFocusLost = false,
-   Callback = function(Text)
-       local value = tonumber(Text)
-       if value then
-           if value >= 16 and value <= 100 then
-               local player = game.Players.LocalPlayer
-               local char = player.Character or player.CharacterAdded:Wait()
-               local humanoid = char:FindFirstChildOfClass("Humanoid")
-               if humanoid then
-                   humanoid.WalkSpeed = value
-               end
-           else
-               Rayfield:Notify({
-                   Title = "Invalid Speed",
-                   Content = "Please enter a number between 16 and 100",
-                   Duration = 4,
-                   Image = 4483362458,
-               })
-           end
-       else
-           Rayfield:Notify({
-               Title = "Not a Number",
-               Content = "Please enter a valid number",
-               Duration = 4,
-               Image = 4483362458,
-           })
+local SpeedSlider = Tab:CreateSlider({
+   Name = "WalkSpeed",
+   Range = {16, 100}, -- Default is Roblox walk speed (16) up to 100
+   Increment = 1,
+   Suffix = "Speed",
+   CurrentValue = 16,
+   Flag = "WalkSpeedSlider",
+   Callback = function(Value)
+       local player = game.Players.LocalPlayer
+       local char = player.Character or player.CharacterAdded:Wait()
+       local humanoid = char:FindFirstChildOfClass("Humanoid")
+       if humanoid then
+           humanoid.WalkSpeed = Value
        end
    end,
 })
