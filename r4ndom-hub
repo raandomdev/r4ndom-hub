@@ -26,6 +26,13 @@ local Window = Rayfield:CreateWindow({
    }
 })
 
+Rayfield:Notify({
+   Title = "IN BETA!",
+   Content = "There might be bugs, please report them to the discord",
+   Duration = 4,
+   Image = 4483362458,
+})
+
 local Tab = Window:CreateTab("Home", 4483362458)
 local Main = Window:CreateTab("Main", 4483362458)
 local Automation = Window:CreateTab("Automation", 4483362458)
