@@ -68,3 +68,24 @@ game:GetService("UserInputService").JumpRequest:Connect(function()
         end
     end
 end)
+
+local noclipEnabled = false
+Tab:CreateToggle({
+    Name = "Noclip",
+    CurrentValue = false,
+    Flag = "NoclipToggle",
+    Callback = function(Value)
+        noclipEnabled = Value
+    end,
+})
+
+game:GetService("RunService").RenderStepped:Connect(function()
+    if noclipEnabled then
+        local player = game.Players.LocalPlayer
+        local char = player.Character or player.CharacterAdded:Wait()
+        local humanoid = char:FindFirstChildOfClass("Humanoid")
+        if humanoid then
+            humanoid.CanCollide = false
+        end
+    end
+end)
