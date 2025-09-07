@@ -101,3 +101,14 @@ game:GetService("RunService").Stepped:Connect(function()
     end
 end)
 
+Main:CreateButton({
+    Name="Teleport to Seeds",
+    Callback=function()
+        local player = game.Players.LocalPlayer
+        local char = player.Character or player.CharacterAdded:Wait()
+        local humanoid = char:FindFirstChildOfClass("Humanoid")
+        if humanoid then
+            humanoid.TeleportTo(game.Workspace.Seeds.Position)
+        end
+    end
+})
