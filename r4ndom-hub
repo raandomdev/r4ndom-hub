@@ -79,13 +79,18 @@ Tab:CreateToggle({
     end,
 })
 
-game:GetService("RunService").RenderStepped:Connect(function()
+game:GetService("RunService").Stepped:Connect(function()
     if noclipEnabled then
         local player = game.Players.LocalPlayer
         local char = player.Character or player.CharacterAdded:Wait()
-        local humanoid = char:FindFirstChildOfClass("Humanoid")
-        if humanoid then
-            humanoid.CanCollide = false
+
+        if char then
+            for _, part in ipairs(char:GetDescendants()) do
+                if part:IsA("BasePart") and part.CanCollide then
+                    part.CanCollide = false
+                end
+            end
         end
     end
 end)
+
